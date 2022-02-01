@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Instagram : mushvigsh takip ederek destek ola bilersiniz :)) -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none;
+        }
+        
+         :root {
+            --clrdark: #000;
+            --clrhack: rgb(9, 80, 9);
+            --clrlight: #fff;
+        }
+        
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            background: var(--clrdark);
+            user-select: none;
+        }
+        
+        .matris-container {
+            width: 500px;
+            box-sizing: content-box;
+            height: 285px;
+            border: 2px solid var(--clrhack);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .matris-container h1 {
+            width: 100%;
+            height: 35px;
+            overflow: hidden;
+            text-align: left;
+            letter-spacing: 2px;
+            font-weight: bold;
+            word-spacing: 5px;
+            color: var(--clrlight);
+            font-size: 22px;
+            line-height: 35px;
+            padding: 0 5px;
+            background: var(--clrhack);
+        }
+        
+        .matris-container ul {
+            color: var(--clrlight);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        .matris-container ul li {
+            width: 50px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            font: 16px;
+        }
+    </style>
+    <title>Shukurov Mushvig || Matris Calismasi</title>
+</head>
+
+<body>
+    <div class="matris-container">
+        <h1>Shukurov Mushvig</h1>
+        <ul id="matrisUl"></ul>
+    </div>
+    <script>
+        setInterval(() => {
+            var newBinaryCode = [];
+            var nums = [0, 1];
+            for (let index = 0; index < 100; index++) {
+                let randomNum = Math.floor(Math.random() * 2);
+                const element = nums[randomNum];
+                newBinaryCode.push(element);
+            }
+            let html = "";
+            newBinaryCode.forEach(item => {
+                let element = `<li>${item}</li>`;
+                html += element;
+            });
+            document.getElementById('matrisUl').innerHTML = html;
+        }, 50);
+    </script>
+</body>
+
+</html>
